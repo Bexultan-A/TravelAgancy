@@ -1,0 +1,20 @@
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/carousel-2.jpg), no-repeat center center;
+    background-size: cover;
+ }
+
+ @media (min-width: 768px) {
+    .booking {
+      position: relative;
+      margin-top: -60px !important;
+      z-index: 1;
+    }
+}
+
+.package-item {
+    transition: .5s;
+}
+
+.package-item:hover {
+    box-shadow: 0 0 30px #CCCCCC;
+}

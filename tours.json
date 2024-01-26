@@ -1,0 +1,50 @@
+{
+    "Tour 1" : {
+        "destination" : "Korea",
+        "departDate" : "2024-01-12",
+        "returnDate" : "2024-02-12",
+        "city" : "Seoul",
+        "price" : "600",
+        "image" : "../images/Insadong-GettyImages-691361168.webp"
+    },
+    "Tour 2" : {
+        "destination" : "Germany",
+        "departDate" : "2024-01-12",
+        "returnDate" : "2024-01-24",
+        "city" : "Berlin",
+        "price" : "500",
+        "image" : "../images/berlin.webp"    
+    },
+    "Tour 3" : {
+        "destination" : "Japan",
+        "departDate" : "2024-03-9",
+        "returnDate" : "2024-04-12",
+        "city" : "Tokyo",
+        "price" : "550",
+        "image" : "../images/tokyo-akihabara-neon-reclame.jpg"
+    },
+    "Tour 4" : {
+        "destination" : "Korea",
+        "departDate" : "2024-01-13",
+        "returnDate" : "2024-01-30",
+        "city" : "Busan",
+        "price" : "500",
+        "image" : "../images/246849-Busan.jpg"
+    },
+    "Tour 5" : {
+        "destination" : "Singapore",
+        "departDate" : "2024-02-01",
+        "returnDate" : "2024-03-15",
+        "city" : "Singapore",
+        "price" : "1000",
+        "image" : "../images/moving-to-singapore-which-neighbourhood-is-for-you-masthead-1170x650.jpg"
+    },
+    "Tour 6" : {
+        "destination" : "Kazakhstan",
+        "departDate" : "2024-01-26",
+        "returnDate" : "2024-09-26",
+        "city" : "Astana",
+        "price" : "100000",
+        "image" : "../images/astana.jpg"
+    }
+}
