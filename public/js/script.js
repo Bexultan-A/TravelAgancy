@@ -1,38 +1,3 @@
-function addTour() {
-    // Get form data
-    const destination = "France"
-    const departDate = "2024-01-15"
-    const returnDate = "2024-02-01"
-    const city = "Paris"
-
-    // Create a JSON object with the form data
-    const newTour = {
-        destination,
-        departDate,
-        returnDate,
-        city
-    };
-
-    // Make a POST request using Fetch API
-    fetch('http://localhost:3000/addTour', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newTour),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert('Tour added successfully!');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('Error adding tour. Please try again.');
-    });
-}
-
-
 async function onSubmit() {
     const destination = document.getElementById("destinationSelect").value
     const departDate = document.getElementById("departDate").value

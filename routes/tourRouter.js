@@ -37,14 +37,4 @@ router.get('/search', (req, res) => {
     res.send(filteredTours);
 });
 
-router.post('/addTour', (req, res) => {
-    const { destination, departDate, returnDate, city } = req.query;
-
-    const newTourId = `Tour ${Object.keys(toursData).length + 1}`
-    toursData[newTourId] = { destination, departDate, returnDate, city }
-
-    fs.writeFileSync('tours.json', JSON.stringify(toursData, null, 2));
-    res.json({ message: 'Tour added successfully', newTourId });
-})
-
 module.exports = router
