@@ -46,7 +46,7 @@ function displayTours(tours) {
             <div class="d-flex justify-content-between mb-3">
                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>${tours.returnDate}</small>
             </div>
-            <a class="h5 text-decoration-none" href="" style="color: black;">Discover amazing places of the world with us</a>
+            <a class="h5 text-decoration-none" href="http://localhost:3000/travelAgency/singleTour/${tours.tourID}" style="color: black;">Discover amazing places of the world with us</a>
             <div class="border-top mt-4 pt-4">
                 <div class="d-flex justify-content-between">
                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5</h6>

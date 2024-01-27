@@ -6,7 +6,7 @@
     "returnDate": "2024-02-12",
     "city": "Seoul",
     "price": "600",
-    "image": "../images/Insadong-GettyImages-691361168.webp"
+    "image": "https://images.wallpaperscraft.ru/image/single/iuzhnaia_koreia_seul_stolitsa_58483_1920x1080.jpg"
   },
   "Tour2": {
     "tourID": "Tour2",
@@ -15,7 +15,7 @@
     "returnDate": "2024-01-24",
     "city": "Berlin",
     "price": "500",
-    "image": "../images/berlin.webp"
+    "image": "https://wallpapers.com/images/featured/berlin-uju0wyyf23ct9bu5.jpg"
   },
   "Tour3": {
     "tourID": "Tour3",
@@ -24,7 +24,7 @@
     "returnDate": "2024-04-12",
     "city": "Tokyo",
     "price": "550",
-    "image": "../images/tokyo-akihabara-neon-reclame.jpg"
+    "image": "https://i.pinimg.com/originals/ff/c8/01/ffc80163e957a0aabe9a12b3a9a022b6.jpg"
   },
   "Tour4": {
     "tourID": "Tour4",
@@ -33,7 +33,7 @@
     "returnDate": "2024-01-30",
     "city": "Busan",
     "price": "500",
-    "image": "../images/246849-Busan.jpg"
+    "image": "https://wallpapers.com/images/featured/busan-b85vqxi55ve53gk7.jpg"
   },
   "Tour5": {
     "tourID": "Tour5",
@@ -42,7 +42,7 @@
     "returnDate": "2024-03-15",
     "city": "Singapore",
     "price": "1000",
-    "image": "../images/moving-to-singapore-which-neighbourhood-is-for-you-masthead-1170x650.jpg"
+    "image": "https://images7.alphacoders.com/406/406038.jpg"
   },
   "Tour6": {
     "tourID": "Tour6",
