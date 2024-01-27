@@ -50,6 +50,7 @@ function displayTours(tours) {
             <div class="border-top mt-4 pt-4">
                 <div class="d-flex justify-content-between">
                     <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5</h6>
+                    <button class="btn btn-primary" onclick="addToMyTours('${tours.tourID}')">add to MyTours</button>
                     <h5 class="m-0">$${tours.price}</h5>
                 </div>
             </div>
@@ -58,6 +59,18 @@ function displayTours(tours) {
     
     resultHolder.appendChild(tourBlock)
 }
+
+async function addToMyTours(tourID) {
+    try {
+        await fetch(`http://localhost:3000/travelAgency/addTour/${tourID}`, {
+            method: 'POST'
+        });
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An unexpected error occurred. Please try again.');
+    }
+}
+
 
 function emptyTours() {
     const results = document.querySelectorAll(".diplayedTour")

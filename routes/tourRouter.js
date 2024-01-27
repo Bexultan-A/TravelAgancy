@@ -3,6 +3,8 @@ const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 const toursData = require('../tours.json');
+const mytoursData = require('../mytours.json');
+
 
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/tours.html'));
@@ -36,5 +38,31 @@ router.get('/search', (req, res) => {
 
     res.send(filteredTours);
 });
+
+
+router.post('/addTour/:tourID', (req, res) => {
+    const tourID = req.params.tourID
+    const destination = toursData[tourID].destination;
+    const departDate = toursData[tourID].departDate;
+    const returnDate = toursData[tourID].returnDate;
+    const city = toursData[tourID].city;
+    const price = toursData[tourID].price;
+    const image = toursData[tourID].image;
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var HH = String(today.getHours());
+    var MM = String(today.getMinutes());
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd + " time: " + HH + ":" + MM;
+    const dateAdded = today
+
+    mytoursData[tourID] = { tourID, destination, departDate, returnDate, city, price, image, dateAdded }
+
+    fs.writeFileSync('mytours.json', JSON.stringify(mytoursData, null, 2));
+    res.json({ message: 'Tour added successfully', newTourId: tourID });
+})
 
 module.exports = router

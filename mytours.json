@@ -1,0 +1,12 @@
+{
+  "Tour1": {
+    "tourID": "Tour1",
+    "destination": "Korea",
+    "departDate": "2024-01-12",
+    "returnDate": "2024-02-12",
+    "city": "Seoul",
+    "price": "600",
+    "image": "../images/Insadong-GettyImages-691361168.webp",
+    "dateAdded": "2024-01-27 time: 17:54"
+  }
+}
