@@ -35,6 +35,11 @@ app.use('/auth', authRouter )
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/views/index.html")
+    if(!req.cookies.token) {
+        res.cookie('token', '')
+        res.cookie('userid', '')
+        res.cookie('role', '')
+    }
 });
 
 const start = async () => {

@@ -9,10 +9,7 @@ async function showNavbar() {
     .split("; ")
     .find((row) => row.startsWith("role="))
     ?.split("=")[1];
-    const token = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("token="))
-    ?.split("=")[1];
+
     const navbaritems = document.querySelector(".navbaritems")
     if(userid != '' && role == 'ADMIN') {
         navbaritems.innerHTML = `
