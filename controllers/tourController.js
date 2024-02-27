@@ -30,6 +30,9 @@ class tourController {
         try {
             const tourID = req.params.tourID;
             const tour = await Tour.findById(tourID)
+            if(!tour) {
+                tour = await myTour.findById(tourID)
+            }
             if (tour) {
                 res.send(tour);
             } else {
