@@ -8,7 +8,7 @@ async function setTourInfo() {
 
     const tourID = urlParts[5]
 
-    const response = await fetch(`http://localhost:3000/travelAgency/getTourDetails/${tourID}`)
+    const response = await fetch(`/travelAgency/getTourDetails/${tourID}`)
     .then(res => res.json())
 
     displayTourInfo(response)
@@ -16,7 +16,7 @@ async function setTourInfo() {
 }
 
 async function getWeatherInfo(tour) {
-    const response = await fetch(`http://localhost:3000/travelAgency/api/weather/${tour.city}`)
+    const response = await fetch(`/travelAgency/api/weather/${tour.city}`)
     .then(res => res.json())
 
     console.log(response)
@@ -100,7 +100,7 @@ function displayTourInfo(tour) {
 }
 
 async function calculatePrice(tourID) {
-    const tour = await fetch(`http://localhost:3000/travelAgency/getTourDetails/${tourID}`)
+    const tour = await fetch(`/travelAgency/getTourDetails/${tourID}`)
     .then(res => res.json())
 
     const adults = document.getElementById('adultNumber').value

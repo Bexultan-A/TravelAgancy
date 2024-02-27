@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", start())
 
 async function start() {
-    const response = await fetch('http://localhost:3000/admin/tours')
+    const response = await fetch('/admin/tours')
     .then(res => res.json())
     console.log(response)
 
@@ -18,16 +18,16 @@ function displayTours(tours) {
     tourBlock.classList.add("diplayedTour")
 
     tourBlock.innerHTML = `
-    <td><input type="text" class="form-control" id="destination${tours.tourID}" value="${tours.destination}"></td>
-    <td><input type="text" class="form-control" id="city${tours.tourID}" value="${tours.city}"></td>
-    <td><input type="text" class="form-control" id="departDate${tours.tourID}" value="${tours.departDate}"></td>
-    <td><input type="text" class="form-control" id="returnDate${tours.tourID}" value="${tours.returnDate}"></td>
-    <td><input type="text" class="form-control" id="price${tours.tourID}" value="${tours.price}"></td>
-    <td><input type="text" class="form-control" id="image${tours.tourID}" value="${tours.image}"></td>
+    <td><input type="text" class="form-control" id="destination${tours._id}" value="${tours.destination}"></td>
+    <td><input type="text" class="form-control" id="city${tours._id}" value="${tours.city}"></td>
+    <td><input type="text" class="form-control" id="departDate${tours._id}" value="${tours.departDate}"></td>
+    <td><input type="text" class="form-control" id="returnDate${tours._id}" value="${tours.returnDate}"></td>
+    <td><input type="text" class="form-control" id="price${tours._id}" value="${tours.price}"></td>
+    <td><input type="text" class="form-control" id="image${tours._id}" value="${tours.image}"></td>
     <td>
         <button class="btn btn-primary text-white px-3 me-3" 
-        onclick="updateTour('${tours.tourID}')">Update</button>
-        <button class="btn btn-danger" onclick="deleteTour('${tours.tourID}')">Delete</button>
+        onclick="updateTour('${tours._id}')">Update</button>
+        <button class="btn btn-danger" onclick="deleteTour('${tours._id}')">Delete</button>
     </td>
     `
     
@@ -44,7 +44,7 @@ async function addTour() {
     const image = document.getElementById("image").value
 
     
-    await fetch(`http://localhost:3000/admin/addTour?destination=${destination}&departDate=${departDate}&returnDate=${returnDate}&city=${city}&price=${price}&image=${image}`, {
+    await fetch(`/admin/addTour?destination=${destination}&departDate=${departDate}&returnDate=${returnDate}&city=${city}&price=${price}&image=${image}`, {
         method: "POST"
     })
 
@@ -53,7 +53,7 @@ async function addTour() {
 
 async function deleteTour(tourID) {
     try {
-        await fetch(`http://localhost:3000/admin/deleteTour/${tourID}`, {
+        await fetch(`/admin/deleteTour/${tourID}`, {
             method: 'DELETE'
         });
     } catch (error) {
@@ -73,7 +73,7 @@ async function updateTour(tourID) {
     const image = document.getElementById(`image${tourID}`).value
 
     
-    await fetch(`http://localhost:3000/admin/updateTour/${tourID}?destination=${destination}&departDate=${departDate}&returnDate=${returnDate}&city=${city}&price=${price}&image=${image}`, {
+    await fetch(`/admin/updateTour/${tourID}?destination=${destination}&departDate=${departDate}&returnDate=${returnDate}&city=${city}&price=${price}&image=${image}`, {
         method: "PUT"
     })
 }

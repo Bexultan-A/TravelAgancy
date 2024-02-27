@@ -8,10 +8,6 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body style="background-color: rgb(248, 246, 246);">
@@ -29,34 +25,29 @@
         </div>
     </nav>
 
-    <!-- Packages Start -->
-    <div class="container-fluid mt-5">
-        <div class="container pb-3 pt-3">
-            <div class="text-center mb-3 pb-3">
-                <h1>My Tours</h1>
+    <div class="container mt-5">
+        <h2>User Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
             </div>
-            <div class="row results">
-                
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
-        </div>
+            <button type="submit" id="submitbtn" class="btn btn-primary">Login</button>
+        </form>
     </div>
-    <!-- Packages End -->
-
-<div class="container mt-5">
-    <!-- Your form and additional input fields go here -->
-    
-</div>
 
 <footer class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5 mt-5 px-5 bg-dark">
     <p>Arakhan Bexultan | SE-2208</p>
 </footer>
 
-<!-- Include Bootstrap or your preferred JS framework -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/js/mytours.js"></script>
+<script src="/js/login.js"></script>
 <script src="/js/navbar.js"></script>
-
 </body>
 </html>
