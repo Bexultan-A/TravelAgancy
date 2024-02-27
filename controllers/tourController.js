@@ -29,7 +29,7 @@ class tourController {
     async getTourDetails(req,res) {
         try {
             const tourID = req.params.tourID;
-            const tour = await Tour.findById(tourID)
+            var tour = await Tour.findById(tourID)
             if(!tour) {
                 tour = await myTour.findById(tourID)
             }
