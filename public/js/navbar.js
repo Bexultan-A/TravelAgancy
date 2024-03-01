@@ -1,17 +1,24 @@
 document.addEventListener("DOMContentLoaded", showNavbar())
 
 async function showNavbar() {
-    const userid = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("userid="))
-    ?.split("=")[1];
-    const role = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("role="))
-    ?.split("=")[1];
-
     const navbaritems = document.querySelector(".navbaritems")
-    if(userid != '' && role == 'ADMIN') {
+    navbaritems.innerHTML = `
+    <a href="/" class="nav-item nav-link px-3">Home</a>
+    <a href="/travelAgency" class="nav-item nav-link px-3">Tours</a>
+    <a href="/auth/registration" class="nav-item nav-link px-3">SignUp</a>
+    <a href="/auth/login" class="nav-item nav-link px-3">Login</a>`
+    const tokenData = await fetch('/token').then(res => res.json())
+    const userid = tokenData.id
+    const role = tokenData.roles[0]
+    const expired = Date.now() >= tokenData.exp * 1000
+
+    if (expired) {
+        navbaritems.innerHTML = `
+        <a href="/" class="nav-item nav-link px-3">Home</a>
+        <a href="/travelAgency" class="nav-item nav-link px-3">Tours</a>
+        <a href="/auth/registration" class="nav-item nav-link px-3">SignUp</a>
+        <a href="/auth/login" class="nav-item nav-link px-3">Login</a>`
+    }else if(userid != '' && role == 'ADMIN') {
         navbaritems.innerHTML = `
         <a href="/" class="nav-item nav-link px-3">Home</a>
         <a href="/travelAgency" class="nav-item nav-link px-3">Tours</a>

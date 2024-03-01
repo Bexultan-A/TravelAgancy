@@ -49,8 +49,6 @@ class authController {
                 return res.status(400).json({message: `Wrong password`})
             }
             const token = generateAccessToken(user._id, user.roles)
-            res.cookie('role', user.roles[0])
-            res.cookie('userid', user._id)
             res.cookie('token', token)
             return res.json({message: "Logged in as " + username})
         } catch (e) {
@@ -62,8 +60,6 @@ class authController {
     async logout(req, res) {
         try {
             res.cookie('token', '')
-            res.cookie('userid', '')
-            res.cookie('role', '')
             return res.json({message: "Logged Out"})
         } catch (e) {
             console.log(e)

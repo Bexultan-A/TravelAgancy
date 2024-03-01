@@ -12,6 +12,8 @@ const helmet = require('helmet')
 
 const port = 3000;
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const { secret } = require('./config');
 app.use(cors());
 app.use(
     helmet.contentSecurityPolicy({
@@ -37,10 +39,19 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/views/index.html")
     if(!req.cookies.token) {
         res.cookie('token', '')
-        res.cookie('userid', '')
-        res.cookie('role', '')
     }
 });
+
+app.get('/token', (req, res) => {
+    const token = req.cookies.token
+    if(!token) {
+        res.cookie('token', '')
+        res.send(false)
+    } else {        
+        const valid = jwt.verify(token, secret)
+        res.send(valid)
+    }
+})
 
 const start = async () => {
     try {

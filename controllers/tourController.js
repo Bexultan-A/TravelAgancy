@@ -6,6 +6,8 @@ const apiKey = '9216cbcbe071459a96b94631241901';
 const Tour = require('../models/tourModel')
 const myTour = require('../models/myTourModel');
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const { secret } = require('../config');
 
 class tourController {
     async getAllTours(req,res) {
@@ -107,7 +109,10 @@ class tourController {
             var yyyy = today.getFullYear();
         
             today = yyyy + '-' + mm + '-' + dd + " time: " + HH + ":" + MM;
-            const dateAdded = today;        
+            const dateAdded = today;     
+
+            const token = jwt.verify(req.cookies.token, secret)
+            const userid = token.id   
 
             const newMyTour = new myTour({
                 destination: destination,
@@ -117,7 +122,7 @@ class tourController {
                 price: price,
                 image: image,
                 dateAdded: dateAdded,
-                owner: req.cookies.userid
+                owner: userid
             })
             await newMyTour.save()
             res.json({ message: 'Tour added successfully', newTourId: tourID });
