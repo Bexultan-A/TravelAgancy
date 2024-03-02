@@ -88,7 +88,7 @@ function displayTourInfo(tour) {
         <div class="container-fluid col-12 mt-5">
             <div class="row justify-content-between">
                 <h4 class="col-6" id="priceHolder">Price: ${tour.price} per person</h1>
-                <button onclick="calculatePrice('${tour.tourID}')" class="btn btn-primary col-4">Calculate Price</button>
+                <button onclick="calculatePrice('${tour._id}')" class="btn btn-primary col-4">Calculate Price</button>
             </div>
         </div>
     </div>
